@@ -129,6 +129,8 @@ footer {
 	width: 9em;
 }
 
+#notifBubble
+
 #sideMenuClosed, .sideMenu{
 	height: calc(100vh - 66.5px);
 	background-image: linear-gradient(to bottom, var(--agno-purple2-gradient), var(--agno-purple2));
