@@ -1,4 +1,4 @@
-//IF YOU ARE LOOKING AT THIS FILE: This is not a clue!!!!!!!! 
+//IF YOU HAVE GONE THROUGH THE TROUBLE OF DEOBFUSCATING THIS FILE: This is not a clue!!!!!!!! 
 //This code is used for checking correct answers to puzzles on the GRATER website. There will never be actual clues hidden here.
 //The rest of the website though... well, who can say? Haha. Not me that's for sure. Guess you'll just have to find out.
 //If you really want to brute force the puzzles I can't stop you, but please don't spoil them for other people. 
