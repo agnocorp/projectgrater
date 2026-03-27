@@ -10,7 +10,7 @@
 <body>
 
 <script type = "module"> //Module import template 
-	import { passwordCheck } from "/modules/cluetools.js";
+	import { passwordCheck } from "/projectgrater/modules/cluetools.js";
 	
 	window._importedFunctions = { passwordCheck }
 </script>
@@ -29,7 +29,7 @@
 		
 		if (check(inputPswd, "loginPswd") && check(inputUser, "loginUser")) {
 			//document.location.href = "dashboard.html";	
-			window.location.replace("/dashboard.html");
+			window.location.replace("/projectgrater/dashboard.html");
 			console.log("tried to redirect");
 		} else {
 			alert("Wrong username or password");
