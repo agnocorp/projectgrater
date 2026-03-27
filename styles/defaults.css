@@ -129,7 +129,8 @@ footer {
 	width: 9em;
 }
 
-#notifBubble
+#notifBubble{
+}
 
 #sideMenuClosed, .sideMenu{
 	height: calc(100vh - 66.5px);
