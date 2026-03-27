@@ -1,0 +1,33 @@
+{
+	"defaultpfp": {
+		"url": "assets/images/defaultpfp.svg",
+		"alt": "A default profile picture"
+	},
+	
+	"people": [
+		{
+			"name": "Arrow",
+			"pfp": "defaultpfp", 
+			"pfpAlt": "defaultpfp", 
+			"url": "#"
+		}
+	],
+	
+	"files": [
+		{
+			"author": "Arrow",
+			"name": "Meeting Notes 10/9",
+			"preview": "yabba dabba do", 
+			"url": "#",
+			"source": "https://github.com/one-ghosty-alt/GRATER-file-storage/blob/main/files/meetingNotes/meetingNotes1.pdf",
+			"date": "3000-10-09T16:16:00.000Z"
+		},
+		{
+			"author": "Arrow",
+			"name": "Meeting Notes 10/16",
+			"preview": "yabba dabba do", 
+			"url": "#",
+			"date": "3000-10-16T16:28:00.000Z"
+		}
+	]
+}

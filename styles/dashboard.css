@@ -1,0 +1,158 @@
+.splash {
+	height: 42vh;
+	background-color: var(--bg-middle);
+	background-image: none;
+	border-bottom: 4px solid var(--text-normal);
+	margin: 0;
+	
+	display: grid;
+	align-items: center;
+	
+	padding-left: 3em;
+	padding-top: 1em;
+}
+
+.splash h2 {
+	font-style: italic;
+	font-size: 2.5em;
+	margin: 0.15em 0;
+	color: var(--text-darker);
+}
+
+.splash h1 {
+	font-size: 4.2em;
+	margin: 0.15em 0;
+}
+
+
+
+.recentfiles {
+	display: flex;
+	gap: 1em;
+	margin-top: 2.5em;
+	
+	overflow: scroll;
+	overscroll-behavior: contain;
+	white-space: nowrap;
+	
+
+}
+
+.recentfiles div {
+	width: 265px;
+	height: 380px;
+	flex-shrink: 0;
+	
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	
+	background-image: linear-gradient(to bottom, var(--bg-lighter), var(--bg-middle));
+	box-shadow: 0.75em 0.25em 0.7em var(--bg-darkest);
+	border: 6px solid var(--bg-middle);
+	overflow: hidden;
+	
+	padding: 0.6em;
+	
+}
+
+.recentfiles div .filepreview{
+	width: 58%;
+	aspect-ratio: 8.5/11;
+	background-color: white;
+	justify-self: center;
+	color: black;
+	text-wrap: wrap;
+	font-size: 0.6em;
+	padding: 0.6em;
+	overflow: hidden;
+	margin-top: 1em;
+	box-shadow: 0.8em 0.8em 0.9em var(--bg-darker);
+}
+
+.recentfiles div .filepreview:hover {
+	transform: translate(-0.5em, -0.5em);
+	box-shadow: 1.3em 1.3em 0.9em var(--bg-darker);
+}
+
+.recentfiles div > * {
+	margin-top: 0.35em;
+	margin-bottom: 0.35em;
+}
+
+.recentfiles div .personname {
+	color: var(--agno-green);
+}
+
+.recentfiles div p img {
+	float: left;
+	margin-right: 1em;
+	margin-left: 0.4em;
+	height: 50px;
+}
+
+.recentfiles div h2{
+	font-size: 1.5em;
+	max-height: 3em;
+	border-bottom: 2px solid var(--text-darker);
+	padding-bottom: 0.3em;
+}
+
+.recentfiles div p, .recentfiles div h2 {
+	text-wrap: wrap;
+	overflow: hidden;
+}
+
+.shortcuts {
+	display: flex;
+	align-items: center;
+	justify-content:space-around;
+	margin-top: 2.5em;
+	
+	flex-wrap: wrap;
+}
+
+.shortcuts a {
+	aspect-ratio: 1/1;
+	background-image: linear-gradient(to bottom, var(--bg-lighter), var(--bg-middle));
+	
+	flex-shrink: 1;
+	flex-basis: 220px;
+	
+	
+	margin: 0 2em;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	
+	
+	border-radius: 50%;
+	border: 5px solid var(--bg-middle);
+	box-shadow: 0.75em 0.25em 0.7em var(--bg-darkest);
+}
+
+
+
+.shortcuts a .material-symbols-outlined {
+	font-size: 4em !important;
+}
+
+.shortcuts .plusicon {
+	background-image: linear-gradient(to bottom, var(--bg-middle), var(--bg-darker));
+	border: 5px solid var(--bg-darker);
+}
+
+.shortcuts .plusicon .material-symbols-outlined {
+	font-size: 6em !important;
+	color: var(--text-darker);
+}
+
+.shortcuts a h2{
+	font-size: 1.2em;
+}
+
+.shortcuts a span, .shortcuts a h2{
+	margin: 0.05em 0;
+}

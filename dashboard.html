@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Project GRATER - Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles/defaults.css">
+<link rel="stylesheet" href="styles/dashboard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,0" />
+</head>
+
+<body>
+	<nav class="topbar">
+		<li class="topbarLogo"><a href="dashboard.html"><img src="assets/images/GRATERLogo.png"></a></li>
+		<li><a href="dashboard.html" data-text = "News">News</a></li>
+		<li><a href="dashboard.html" data-text = "E-mail">E-mail</a></li>
+		<li><a href="dashboard.html" data-text = "QuickPrint">QuickPrint</a></li>
+		<li><a href="dashboard.html" data-text = "Support">Support</a></li>
+		<li class="topbarLogout"><a href="index.html" onclick = "window.location.replace('index.html'); return false;" data-text = "Logout">Logout</a></li>
+	</nav>
+
+	<aside class="sideMenu" id="sideMenu">
+		
+		<div class="profileImage">default pfp here </div>
+		<div>
+			<h2 class="profileName">Inphernal McInphernalson</h2>
+			<p class="profileDesc">job description</p>
+		</div>
+		<nav class="sidebar">
+			<li><a href="dashboard.html">Projects</a></li>
+			<li><a href="dashboard.html">Messages</a></li>
+			<li><a href="dashboard.html">Calandar</a></li>
+			<li><a href="dashboard.html">Files</a></li>
+			<li><a href="dashboard.html">Account</a></li>
+		</nav>
+		
+		<a href="#" id="sideMenuCloser" onclick="closeMenu(); return false;" class="sideMenuIcons"><span class="material-symbols-outlined">arrow_forward</span></a>
+	</aside>
+	
+	<div id="sideMenuClosed">
+		<a href="#" id="sideMenuOpener" onclick="openMenu(); return false;" class="sideMenuIcons"><span class="material-symbols-outlined">arrow_back</span></a>
+	</div>
+	
+	<script src="scripts/sidemenu.js"></script>
+	
+	<main>
+	
+		<section class="splash">
+			<div>
+			<h2>Welcome to</h2>
+			<h1>Project <em>GRATER</em></h1>
+			</div>
+		</section>
+		
+		<section>
+			<h2>Recent Activity</h2>
+			<hr>
+			<div class = "recentfiles" id = "recentfiles">
+				<!-- files are added here through script-->
+			</div>
+			<script src="modules/hscroll.js"></script>
+			<script src="scripts/dashboardDocuments.js"></script>
+		</section>
+		
+		<section>
+			<h2>Shortcuts</h2>
+			<hr>
+			<div class="shortcuts">
+				<a href="#"><span class="material-symbols-outlined">files</span></br><h2>Project files</h2></a>
+				<a href="#"><span class="material-symbols-outlined">forum</span></br><h2>Team leads chat</h2></a>
+				<a href="#"><span class="material-symbols-outlined">lists</span></br><h2>To-do list</h2></a>
+				<a href="#"><span class="material-symbols-outlined">edit_document</span></br><h2>Budget request form</h2></a>
+				<a href="#"><span class="material-symbols-outlined">table</span></br><h2>Budget spreadsheet</h2></a>
+				<a class="plusicon"><span class="material-symbols-outlined">add</span></a>
+			
+			</div>
+		</section>
+		
+		<footer>
+			<p>© Agnocorp Enterprises</p>
+		</footer>
+	
+	</main>
+
+
+</body>
+
+</html>

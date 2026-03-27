@@ -1,0 +1,227 @@
+:root {
+	--bg-darkest: #16181A;
+	--bg-darker: #1E1F21;
+	--bg-middle: #2C2E30;
+	--bg-lighter: #3A3C40;
+	--agno-purple: #2D3D96;
+	--agno-purple2: #445BB5;
+	--agno-purple-shadow: #29388A;
+	--agno-purple-gradient: #4259AB;
+	--agno-purple2-gradient: #5C73C2;
+	--agno-purple2-shadow: #4056AB;
+	--agno-green: #4BB572;
+	--text-normal: #F0F5FF;
+	--text-darker: #CCD0D9;
+}
+
+a:link, a:visited{
+	text-decoration: none;
+	color: inherit;
+}
+
+html {
+
+}
+
+body {
+	background-color: var(--bg-darker);
+	color: var(--text-normal);
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	font-size: 16px;
+	font-family: "Open Sans", sans-serif;
+	
+	scrollbar-color: var(--text-darker) var(--bg-darker);
+	
+}
+
+main {
+	width: calc(100vw - 75px);
+}
+
+hr {
+	color: var(--text-darker);
+}
+
+
+section {
+	padding: 1.5em 3em;
+	padding-bottom: 3.5em;
+	background-image: linear-gradient(to bottom, var(--bg-darker), var(--bg-darkest));
+	
+	overflow: hidden;
+	border-bottom: 2px solid var(--text-normal);
+}
+
+footer {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 0;
+	font-style: italic;
+	color: var(--text-darker);
+	font-size: 0.9em;
+}
+
+.topbar {
+	background-image: linear-gradient(to bottom, var(--agno-purple-gradient), var(--agno-purple));
+	list-style-type: none;
+	font-size: 1.25em;
+	border-bottom: 2px solid var(--text-normal);
+	box-shadow: 0 0.45em 0.7em var(--bg-darkest);
+	
+	display: flex;
+	width: 100%;
+	height: 64px;
+	line-height: 50px;
+	padding: 0;
+	margin: 0;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	
+	overflow: hidden ;
+	overscroll-behavior: contain;
+	flex: 0 0 auto;
+	white-space: nowrap;
+}
+
+.topbarLogout {
+	margin-left: auto;
+}
+
+.topbarLogout a{
+	border-right: none !important;
+	border-left: 2px solid var(--text-normal);
+}
+
+.topbar li a{
+	padding: 7px 35px;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	flex-direction: column;
+	box-shadow:	inset -0.15em -0.15em 0.2em var(--agno-purple-shadow);
+	border-right: 2px solid var(--text-normal);
+}
+
+.topbar li a:hover {
+	background-image: linear-gradient(to bottom, var(--agno-purple2-gradient), var(--agno-purple2));
+	box-shadow:	inset 0.15em 0.15em 0.2em var(--agno-purple2-shadow);
+	font-weight: bold;
+}
+
+.topbar li a:link, .topbar li a:visited {
+	color: var(--text-normal);
+}
+
+.topbar li a::after {
+  content: attr(data-text);
+  font-weight: bold;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.topbar li a img {
+	width: 9em;
+}
+
+#sideMenuClosed, .sideMenu{
+	height: calc(100vh - 66.5px);
+	background-image: linear-gradient(to bottom, var(--agno-purple2-gradient), var(--agno-purple2));
+	border-left: 2px solid var(--text-normal);
+	box-shadow: -0.6em 0.7em 0.7em var(--bg-darkest);
+	
+	text-align: center;
+	
+	display: grid;
+	
+	box-sizing: border-box;
+	position: sticky;
+	top: 66px;
+	float:right;
+	z-index: 3;
+}
+
+.sideMenu {
+	width: 325px;
+	
+
+	grid-template-rows:auto 1fr auto auto;
+	align-items: start;
+	justify-items: center;
+	
+	
+	
+	display: none;
+}
+
+#sideMenuClosed {
+	width: 75px;
+	
+	
+	grid-template-rows: auto;
+	align-items: end;
+}
+
+
+
+.profileImage {
+	aspect-ratio: 1/1;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.sidebar {
+	background-color: var(--agno-purple);		
+	list-style-type: none;
+	font-size: 1.25em;
+	
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	
+	border-bottom: 2px solid var(--text-normal);
+
+}
+
+.sidebar li a{
+	padding: 0px 15px;
+	height: 75px;
+	line-height: 75px;
+	display: block;
+	border-top: 2px solid var(--text-normal);
+	background-image: linear-gradient(to bottom, var(--agno-purple-gradient), var(--agno-purple));
+	box-shadow:	inset -0.15em -0.15em 0.2em var(--agno-purple-shadow);
+}
+
+.sidebar li a:hover {
+	background-image: linear-gradient(to bottom, var(--agno-purple2-gradient), var(--agno-purple2));
+	box-shadow:	inset 0.15em 0.15em 0.2em var(--agno-purple2-shadow);
+	font-weight: bold;
+}
+
+.profileName {
+	font-size: 1.5em;
+}
+
+.material-symbols-outlined{
+	font-size: 2.5em !important;
+	line-height: 75px !important;
+}
+
+.sideMenuIcons{
+	background-image: linear-gradient(to bottom, var(--agno-purple-gradient), var(--agno-purple));
+	border-top: 2px solid var(--text-normal);
+	box-shadow:	inset -0.15em -0.15em 0.2em var(--agno-purple-shadow);
+	width: 100% !important;
+	height: 75px !important;
+}
+
+.sideMenuIcons:hover{
+	background-image: linear-gradient(to bottom, var(--agno-purple2-gradient), var(--agno-purple2));
+	box-shadow:	inset 0.15em 0.15em 0.2em var(--agno-purple2-shadow);
+}

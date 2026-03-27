@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Project GRATER - Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles/defaults.css">
+</head>
+
+<body>
+
+<script type = "module"> //Module import template 
+	import { passwordCheck } from "/modules/cluetools.js";
+	
+	window._importedFunctions = { passwordCheck }
+</script>
+
+<h1>Hi guys</h1>
+<form id = "login" onsubmit = "login(); return false">
+	<input type = "text" id = "user" placeholder = "Username">
+	<input type = "password" id = "pswd" placeholder = "Password">
+	<button type = "submit">Log in</button>
+</form>
+<script>
+	function login() {
+		let inputPswd = document.getElementById("pswd").value;
+		let inputUser = document.getElementById("user").value;
+		let check = window._importedFunctions.passwordCheck;
+		
+		if (check(inputPswd, "loginPswd") && check(inputUser, "loginUser")) {
+			//document.location.href = "dashboard.html";	
+			window.location.replace("/dashboard.html");
+			console.log("tried to redirect");
+		} else {
+			alert("Wrong username or password");
+		}
+		
+		console.log(btoa(inputPswd))
+	
+	}
+</script>
+</body>
+
+</html>

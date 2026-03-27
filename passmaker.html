@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>hi guys</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles/defaults.css">
+</head>
+
+<body>
+
+
+<h1>Ghostys super cool and awesome clue maker thign</h1>
+<h3>Dude what are you doing here GET OUT OF HERE!!!!!!!!!!!!!!!</h3>
+<form id = "inputForm" onsubmit = "return false">
+	<input type = "text" id = "inputBox" placeholder = "Text">
+	<button type = "submit" onclick = "submitFunction()">convert to b64</button>
+</form>
+<p> your b64 is: </p>
+<p id="output"> </p>
+
+<script>
+	function submitFunction(){
+		inputPswd = document.getElementById("inputBox").value;
+	
+		document.getElementById("output").textContent = btoa(inputPswd);
+	}
+</script>
+</body>
+
+</html>
