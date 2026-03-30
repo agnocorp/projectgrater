@@ -238,3 +238,8 @@ footer {
 	background-image: linear-gradient(to bottom, var(--agno-purple2-gradient), var(--agno-purple2));
 	box-shadow:	inset 0.15em 0.15em 0.2em var(--agno-purple2-shadow);
 }
+
+#popup {
+	position: absolute
+	
+}
