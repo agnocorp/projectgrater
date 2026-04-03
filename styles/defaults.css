@@ -239,18 +239,31 @@ footer {
 	box-shadow:	inset 0.15em 0.15em 0.2em var(--agno-purple2-shadow);
 }
 
+@keyframes popupEnter {
+	from {left: -600px;}
+	to {left: 0px;}
+}
+
+@keyframes popupFlash {
+	0% {opacity: 100;}
+	50% {opacity: 0;}
+	100% {opacity: 100;}
+}
+
 #popup {
 	position: fixed;
 	z-index: 10;
-	width: 25em;
-	height: 10em;
-	left: 0px;
+	width: 28em;
+	height: 11em;
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
 	
 	background-image: linear-gradient(to bottom, var(--agno-purple-gradient), var(--agno-purple));
 	border: 2px solid var(--text-normal);
+	
+	animation-name: popupEnter;
+	animation-duration: 2s;
 }
 
 
@@ -260,6 +273,10 @@ footer {
 	gap: .5em;
 	margin: 0.2em .5em .4em;
 	padding: .2em 0; 
+	
+	animation-name: popupFlash;
+	animation-duration: 1s;
+	animation-iteration-count: 3;
 }
 
 #popup .heading span {
@@ -289,13 +306,13 @@ footer {
 #popup p {
 	margin: 0;
 	display: block;
-	height: auto;
-	width: 23.4em;
+	height: 100%;
+	width: 26.4em;
 	
 	overflow: hidden;
 	display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
-            line-clamp: 2; 
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
     -webkit-box-orient: vertical;
     line-height: 150%;
 	
@@ -312,8 +329,7 @@ footer {
 	justify-content: center;
 	gap: .6em;
 	margin: 0;
-	margin-bottom: 0;
-	height: 2.8em;
+	height: 6em;
 }
 
 #popup .buttons button {
@@ -321,6 +337,8 @@ footer {
 	height: 100%;
 	border-radius: 0;
 	margin: 0;
+	
+	font-size:13pt;
 
 	border-left: 1.5px solid var(--text-darker);
 	border-right: 1.5px solid var(--text-darker);

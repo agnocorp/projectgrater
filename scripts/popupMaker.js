@@ -81,14 +81,19 @@ function createPopup(subtitle,title,body,type,viewFunction) {
 
 function viewEmail(){
 	console.log("Email or something");
-	//localStorage.setItem("hBWwY",true);
+	localStorage.setItem("hBWwY","true");
 }
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 
 if (storageAvailable("localStorage")){
 	let storage = window.localStorage;
-	state = storage.getItem("hBWwY");
-	if (!state){
+	emailState = storage.getItem("hBWwY");
+	if (!emailState == "true"){
 		createPopup("test","Subject","s hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys  hi guys hi guys hi guys hi guys hi guys hi guys hi guys  hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys ","Email",viewEmail);
 	}
 } else {
