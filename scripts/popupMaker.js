@@ -93,7 +93,7 @@ function sleep(ms) {
 if (storageAvailable("localStorage")){
 	let storage = window.localStorage;
 	emailState = storage.getItem("hBWwY");
-	if (!emailState == "true"){
+	if (!(emailState == "true")){
 		createPopup("test","Subject","s hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys  hi guys hi guys hi guys hi guys hi guys hi guys hi guys  hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys ","Email",viewEmail);
 	}
 } else {

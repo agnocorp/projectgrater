@@ -239,15 +239,15 @@ footer {
 	box-shadow:	inset 0.15em 0.15em 0.2em var(--agno-purple2-shadow);
 }
 
-@keyframes popupEnter {
-	from {left: -600px;}
-	to {left: 0px;}
-}
-
 @keyframes popupFlash {
 	0% {opacity: 100;}
 	50% {opacity: 0;}
 	100% {opacity: 100;}
+}
+
+@keyframes popupEnter {
+	from {left: -600px;}
+	to {left: 0px;}
 }
 
 #popup {
