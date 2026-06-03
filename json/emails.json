@@ -2,9 +2,33 @@
 	"arrowEmail1": [
 		{
 		"author": "Arrow",
-		"date": "3000-10-17T16:09:34.000Z";
+		"recipients": "M. Glass",
+		"date": "3000-10-17T16:09:34.000Z",
 		"subject": "Q3 Budget Error",
-		"body": "Glass,<br>Your Q3 budget report appears to have errors. The total of the Amount column under Allocated Funds does not match the total of the Budget column under Quarterly Expenses. Please fix this ASAP as we are already late on submitting this.<br>Arrow<br><span class=\"sigBlock\">Project GRATER Chief Engineer<br>arrow@agno.com</span>"
+		"body": "Glass,<br>Your Q3 budget report appears to have errors. The total of the Amount column under Allocated Funds does not match the total of the Budget column under Quarterly Expenses. Please fix this ASAP as we are already late on submitting this.<br>Arrow<br><span class=\"sigBlockA\">Project GRATER Chief Engineer<br>arrow@agno.com</span>",
+		"read": false
 		}
+	],
+	"clockEmail1": [
+		{
+		"author": "Clockwork",
+		"recipients": "M. Glass, Arrow",
+		"date": "3000-10-13T08:20:20.000Z",
+		"subject": "Friday Meeting Reminder",
+		"body": "Hello all,<br>Just a reminder that we have a meeting with corporate this week. Please make sure you have your respective parts of the presentation ready.<br>Clockwork<br><span class=\"sigBlockC\">R&D Lead for Project GRATER.<br>cwork@agno.com</span>",
+		"read": false
+		},
+
+	],
+	"manageEmail1": [
+		{
+		"author": "Agnocorp Management",
+		"recipients": "Agnocorp Employees",
+		"date": "3000-10-13T08:03:10.000Z",
+		"subject": "Building 6A/6B Update",
+		"body": "Good morning,<br>Following the stronger-than-average storm this weekend, Buildings 6A and 6B have been snowed in and will likely not be accessible for the rest of the week. If you were scheduled to be in those buildings this week, please keep an eye out for communication from your supervisors for your new locations.<br>- Management<br>",
+		"read": true
+		},
+		
 	]
 }
