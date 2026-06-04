@@ -1,7 +1,11 @@
 const emailList = document.getElementById("emailList");
 var emails = {}
 
+const url = window.location.search;
+const urlParams = new URLSearchParams(url);
+
 function addEmail(author, recipients, timestamp, subject, body, read, num){
+
 	
 	let emailDiv = document.createElement("div");
 	if (read) {
@@ -43,6 +47,11 @@ function viewEmail() {
 	if (!this.classList.contains("read")){
 		this.classList.add("read");
 	}
+	
+	history.replaceState(null, "", "?e="+this.id);
+	
+	
+	//history.replaceState(null, "", )
 	
 	openedEmail = emails[Number(this.id)];
 	let emailViewer = document.getElementsByClassName("emailViewer")[0];
@@ -111,6 +120,11 @@ async function populateList(){
 		addEmail(email.author, email.recipients, email.date, email.subject, email.body, email.read, emailNum);
 		document.getElementById(emailNum.toString()).addEventListener("click", viewEmail);
 		emailNum = emailNum + 1;
+	}
+	
+	const viewing = urlParams.get('e');
+	if (viewing){
+		document.getElementById(viewing).click();
 	}
 }
 

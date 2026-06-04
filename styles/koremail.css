@@ -157,6 +157,8 @@ section {
 
 .emailList h3 {
 	margin: 0 0.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .emailList div p {
@@ -198,6 +200,7 @@ section {
 
 .emailViewer {
 	width: 69%;
+	overflow: scroll;
 }
 
 .emailViewer .heading {

@@ -29,6 +29,16 @@
 			"subject": "Building 6A/6B Update",
 			"body": "Good morning,<br>Following the stronger-than-average storm this weekend, Buildings 6A and 6B have been snowed in and will likely not be accessible for the rest of the week. If you were scheduled to be in those buildings this week, please keep an eye out for communication from your supervisors for your new locations.<br>- Management<br>",
 			"read": true
+			},
+			{
+			"author": "Radar",
+			"authoremail": "radar@agno.com",
+			"recipients": ["Agnocorp Employees"],
+			"recipemails": [],
+			"date": "3000-10-06T13:44:10.000Z",
+			"subject": "This Wednesday: Lightning Wand on Crystals in Steelmaking",
+			"body": "Lightning Wand, an Agnocorp material sciences researcher known for pioneering the use of class-E crystals in cryogenic oxygen distillation, will be giving a presentation on the various potential applications of crystal technology in the steelmaking process this Wednesday. The presentation will be held in Building 11, Room 103 at 4:30 PM. Some refreshments will be provided! See below for more information: <br><img src=\"https://files.catbox.moe/hpkgka.png\" style=\"width:600px\"><br>Radar<br>Agnocorp Events Coordinator<br>radar@agno.com<br>",
+			"read": false
 			}
 	]
 }
