@@ -52,6 +52,7 @@ footer {
 	color: var(--text-darker);
 	font-size: 0.9em;
 	font-weight: 200;
+	background-color: var(--bg-darkest);
 }
 
 
@@ -82,9 +83,11 @@ main {
 	flex-direction: row;
 	
 	width: 100%;
+	height: 100vh;
 	
 	border-left: 1px solid var(--red-darker);
 	border-right: 1px solid var(--red-darker);
+	border-bottom: 2px solid var(--red-darker);
 	
 	box-sizing: border-box;
 }
@@ -138,9 +141,116 @@ section {
 }
 
 .emailList {
-	width: 22%;
+	width: 21%;
+	background-color: var(--bg-darkest);
 }
 
-.email {
-	width: 68%;
+.emailList > div {
+	margin-bottom: 5px;
+	border-left: 4px solid var(--red);
+	border-right: 4px solid var(--bg-darker);
+	background-color: var(--bg-darker);
+	padding: 1em 0;
+	
+	box-sizing: border-box;
+}
+
+.emailList h3 {
+	margin: 0 0.5em;
+}
+
+.emailList div p {
+	overflow: hidden;
+	display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+    -webkit-box-orient: vertical;
+	margin: 0em 0.75em;
+	
+	color: var(--text-darker);
+}
+
+.emailList div div {
+	display: flex;
+	margin: 0.25em 0.5em;
+}
+
+.emailList div div p {
+	margin-left: auto;
+	font-style: italic;
+}
+
+.emailList div div * {
+	margin: 0;
+}
+
+.emailList > .read {
+	border-left: 4px solid var(--bg-darker);
+}
+
+.read h3 {
+	font-weight: normal;
+}
+
+.read div h4 {
+	font-weight: normal;
+}
+
+.emailViewer {
+	width: 69%;
+}
+
+.emailViewer .heading {
+	background-color: var(--bg-darkest);
+	border-bottom: 2px solid var(--red);
+	padding: 2px 0;
+}
+
+.emailViewer .heading p {
+	margin: 0;
+	border-bottom: 2px solid var(--bg-middle);
+	text-indent: 1em;
+	line-height: 2em;
+	
+	color: var(--text-darker);
+}
+
+.emailViewer .heading p:last-child {
+	border-bottom: 0;
+}
+
+.emailViewer h2 {
+	border-bottom: 4px solid var(--bg-middle);
+	padding: 0.7em 0 0.5em;
+	text-indent: 0.5em;
+	margin: 0;
+}
+
+.emailViewer .body {
+	margin: 1em 1.2em;
+}
+
+.body p {
+	margin: 0.75em 0;
+}
+
+.sigBlockA p{
+	color: var(--text-darker);
+	font-size: 10pt;
+	margin: 0.2em 0;
+}
+
+.sigBlockA p:nth-child(2){
+	font-weight:bold;
+	font-size: 11pt;
+}
+
+.sigBlockC p{
+	font-size: 11pt;
+	margin: 0.5em 0;
+	font-weight: bold;
+}
+
+.sigBlockC p:last-child{
+	font-style: italic;
 }

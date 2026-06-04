@@ -90,13 +90,15 @@ async function populateDocs(){
 			timeZone: "UTC",
 			hour12: true,
 			hour: "numeric",
-			minute: "2-digit"
+			minute: "2-digit",
+			calendar: "gregory"
 		}
 		const options2 = {
 			timeZone: "UTC",
 			hour12: true,
 			month: "2-digit",
-			day: "2-digit"
+			day: "2-digit",
+			calendar: "gregory"
 		}
 
 		let time = new Intl.DateTimeFormat("en-us", options1).format(new Date(file.date));
