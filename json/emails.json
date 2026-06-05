@@ -8,7 +8,7 @@
 			"date": "3000-10-17T16:09:34.000Z",
 			"subject": "Q3 Budget Error",
 			"preceding": "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/spreadsheets/d/1xQcZ2aiLXrL_iB3REYykSPrdxidRWMkNCB_IhgA4-Zs/edit?gid=1398001727#gid=1398001727\"><div class=\"attachment\"><div class=\"material-symbols-outlined file\">file_present</div><p>GRATER 3006 Annual Budget Report <span class=\"material-symbols-outlined\">open_in_new</span></p></div></a>",
-			"body": "Glass,<br>Your Q3 budget report appears to have errors. The total of the Amount column under Allocated Funds does not match the total of the Budget column under Quarterly Expenses. Please fix this ASAP as we are already late on submitting this.<br>Arrow<div class=\"sigBlockA\"><br>Project GRATER Chief Engineer<br>arrow@agno.com</div><br>",
+			"body": "Glass,<br>Your Q3 budget report appears to have errors. The total of the Amount column under Allocated Funds (cell B11) does not match the total of the Budget column under Quarterly Expenses (cell B21). Please fix this ASAP as we are already late on submitting this.<br>Arrow<div class=\"sigBlockA\"><br>Project GRATER Chief Engineer<br>arrow@agno.com</div><br>",
 			"read": false
 			},
 			{
