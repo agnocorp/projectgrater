@@ -61,21 +61,28 @@ pdfControls.addEventListener("submit", goToPage);
 
 //pdfControls.onsubmit = "goToPage(1);";
 
-let url = "assets/documents/meetingNotes1.pdf";
+const urlParams = new URLSearchParams(window.location.search);
+let path = urlParams.get('f');
+if (path){
+	path = decodeURI(path);
+	let url = "files/"+path;
 
-pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-	pdfDoc = pdfDoc_;
-	pageCount = pdfDoc.numPages;
-	
-	for (let page = 1; page <= pageCount; page++){
-		drawPage(page);
-	}
-	
-	const page1 = document.getElementById("page1");
-	if (page1 != null){
-		pdfDiv.insertBefore(pdfControls, page1);
-	}else{
-		console.log("no page1");
-	}
-	
-})
+	pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+		pdfDoc = pdfDoc_;
+		pageCount = pdfDoc.numPages;
+		
+		for (let page = 1; page <= pageCount; page++){
+			drawPage(page);
+		}
+		
+		const page1 = document.getElementById("page1");
+		if (page1 != null){
+			pdfDiv.insertBefore(pdfControls, page1);
+		}else{
+			console.log("no page1");
+		}
+		
+	})
+}else{
+	alert("No file path provided!");
+}
