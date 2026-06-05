@@ -88,9 +88,19 @@ footer {
 	flex-direction: row;
 }
 
-.topbar img {
-	width: 8em;
+.topbar .return{
+	margin-left: auto;
+	margin-right: 0.4em;
 }
+
+.topbar img {
+	height: 45px;
+}
+
+.topbar .return img {
+	height: 50px;
+}
+
 
 main {
 	display: flex;
@@ -174,7 +184,13 @@ section {
 .emailList h3 {
 	margin: 0 0.5em;
 	overflow: hidden;
+}
+
+.emailList div h4 {
+	width: 60%;
+	white-space: nowrap;
 	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .emailList div p {
@@ -273,6 +289,11 @@ section {
 	border-bottom: 0;
 }
 
+.emailViewer .replyHeading {
+	border-top: 2px solid var(--red);
+	border-bottom: 2px solid var(--bg-middle);
+}
+
 .emailViewer h2 {
 	border-bottom: 4px solid var(--bg-middle);
 	padding: 0.7em 0 0.5em;
@@ -314,7 +335,7 @@ section {
 }
 
 .emailViewer .body {
-	margin: 1em 1.2em;
+	margin: 1em 1.2em 3em;
 }
 
 .body p {
@@ -340,4 +361,13 @@ section {
 
 .sigBlockC p:last-child{
 	font-style: italic;
+}
+
+.sigBlockM p{
+	font-size: 11pt;
+	margin: 0.5em 0;
+}
+
+.sigBlockM p:last-child{
+	color: var(--text-darker);
 }

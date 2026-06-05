@@ -43,6 +43,59 @@ function addEmail(author, recipients, timestamp, subject, body, read, num){
 	emailList.append(emailDiv);
 }
 
+function makeHeader(source){
+	let headingDiv = document.createElement("div");
+	headingDiv.classList.add("heading");
+	
+	if (source.reply){
+		headingDiv.classList.add("replyHeading");
+	}
+	
+	let authorP = document.createElement("p");
+		authorP.textContent = "From: " + source.author + " (" + source.authoremail + ")";
+		headingDiv.append(authorP);
+	let recipientP = document.createElement("p");
+		let recipText = "";
+		if (source.recipemails.length > 0){
+			for (const recip in source.recipients){
+				recipText = recipText + source.recipients[recip] + " (" + source.recipemails[recip] + "), ";
+			}
+			recipText = recipText.substring(0, recipText.length-2);
+		}else{
+			recipText = source.recipients[0];
+		}
+		recipientP.textContent = "To: " + recipText;
+		headingDiv.append(recipientP);
+	let timestampP = document.createElement("p");
+		const options = {
+			timeZone: "UTC",
+			hour12: true,
+			month: "long",
+			day: "2-digit",
+			hour: "numeric",
+			minute: "2-digit",
+			calendar: "gregory",
+			weekday: "long"
+		}
+		timestampP.textContent = new Intl.DateTimeFormat("en-us", options).format(new Date(source.date));
+		headingDiv.append(timestampP);
+		
+	return headingDiv;
+}
+
+function makeBody(source){
+	let bodyDiv = document.createElement("div");
+	let parsedBody = source.body.match(/(.*?)<br>/gm);
+	let finalBody = ""
+	for (const line in parsedBody){
+		finalBody = finalBody + "<p>" + parsedBody[line].replace(/<br>/, "") + "</p>";
+	}
+	bodyDiv.innerHTML = finalBody;
+	bodyDiv.classList.add("body");
+	
+	return bodyDiv;
+}
+
 function viewEmail() {
 	if (!this.classList.contains("read")){
 		this.classList.add("read");
@@ -69,38 +122,8 @@ function viewEmail() {
 	emailViewerOuter.innerHTML = "";
 	let emailViewer = document.createElement("div");
 		emailViewer.classList.add("emailViewBG");
-	let headingDiv = document.createElement("div");
-	headingDiv.classList.add("heading");
-	
-	let authorP = document.createElement("p");
-		authorP.textContent = "From: " + openedEmail.author + " (" + openedEmail.authoremail + ")";
-		headingDiv.append(authorP);
-	let recipientP = document.createElement("p");
-		let recipText = "";
-		if (openedEmail.recipemails.length > 0){
-			for (const recip in openedEmail.recipients){
-				recipText = recipText + openedEmail.recipients[recip] + " (" + openedEmail.recipemails[recip] + "), ";
-			}
-			recipText = recipText.substring(0, recipText.length-2);
-		}else{
-			recipText = openedEmail.recipients[0];
-		}
-		recipientP.textContent = "To: " + recipText;
-		headingDiv.append(recipientP);
-	let timestampP = document.createElement("p");
-		const options = {
-			timeZone: "UTC",
-			hour12: true,
-			month: "long",
-			day: "2-digit",
-			hour: "numeric",
-			minute: "2-digit",
-			calendar: "gregory",
-			weekday: "long"
-		}
-		timestampP.textContent = new Intl.DateTimeFormat("en-us", options).format(new Date(openedEmail.date));
-		headingDiv.append(timestampP);
-	emailViewer.append(headingDiv);
+		
+	emailViewer.append(makeHeader(openedEmail));
 
 	
 	let subjectH2 = document.createElement("h2");
@@ -113,15 +136,26 @@ function viewEmail() {
 		emailViewer.append(precedingDiv);
 	}
 	
-	let bodyDiv = document.createElement("div");
-		let parsedBody = openedEmail.body.match(/(.*?)<br>/gm);
-		let finalBody = ""
-		for (const line in parsedBody){
-			finalBody = finalBody + "<p>" + parsedBody[line].replace(/<br>/, "") + "</p>";
+	emailViewer.append(makeBody(openedEmail));
+	
+	if (openedEmail.replies) {
+		for (const replyNum in openedEmail.replies){
+			let reply = emails[openedEmail.replies[replyNum]];
+			let replyDiv = document.createElement("div");
+				replyDiv.id = openedEmail.replies[replyNum].toString();
+			replyDiv.append(makeHeader(reply));
+			
+			if (reply.preceding){
+				precedingDiv = document.createElement("div");
+				precedingDiv.innerHTML = reply.preceding;
+				replyDiv.append(precedingDiv);
+			}
+			
+			replyDiv.append(makeBody(reply));
+			
+			emailViewer.append(replyDiv);
 		}
-		bodyDiv.innerHTML = finalBody;
-		bodyDiv.classList.add("body");
-	emailViewer.append(bodyDiv);
+	}
 	
 	emailViewerOuter.append(emailViewer);
 	
@@ -139,14 +173,23 @@ async function populateList(){
 	let emailNum = 0;
 	
 	for (const email of emails) {
-		addEmail(email.author, email.recipients, email.date, email.subject, email.body, email.read, emailNum);
-		document.getElementById(emailNum.toString()).addEventListener("click", viewEmail);
+		if (!email.reply){
+			addEmail(email.author, email.recipients, email.date, email.subject, email.body, email.read, emailNum);
+			document.getElementById(emailNum.toString()).addEventListener("click", viewEmail);
+		}
 		emailNum = emailNum + 1;
 	}
 	
 	const viewing = urlParams.get('e');
 	if (viewing){
-		document.getElementById(viewing).click();
+		if (!emails[viewing].reply){
+			document.getElementById(viewing).click();
+		}else{
+			
+			document.getElementById(emails[viewing].reply).click();
+			document.getElementById(viewing).scrollIntoView({behavior: "smooth", block: "top", container: "nearest"})
+		}
+		
 	}
 }
 

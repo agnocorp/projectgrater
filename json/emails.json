@@ -42,14 +42,26 @@
 			"read": false
 			},
 			{
-			"author": "Radar",
-			"authoremail": "radar@agno.com",
-			"recipients": ["Agnocorp Employees"],
-			"recipemails": [],
-			"date": "3000-10-03T13:21:08.000Z",
-			"subject": "im still working on this one",
-			"body": "sorry chat<br>",
+			"author": "Arrow",
+			"authoremail": "arrow@agno.com",
+			"replies": [5],
+			"recipients": ["M. Glass"],
+			"recipemails": ["mglass@agno.com"],
+			"date": "3000-09-28T08:03:32.000Z",
+			"subject": "Q3 Budget Reminder",
+			"body": "Glass,<br>Reminder that the Q3 budget report is due this Friday. Please ensure you have it turned in on time.<br>Arrow<div class=\"sigBlockA\"><br>Project GRATER Chief Engineer<br>arrow@agno.com</div><br>",
 			"read": false
+			},
+			{
+			"author": "You",
+			"authoremail": "mglass@agno.com",
+			"recipients": ["Arrow"],
+			"recipemails": ["arrow@agno.com"],
+			"date": "3000-09-28T14:56:02.000Z",
+			"subject": "Re: Q3 Budget Reminder",
+			"body": "Thank you...will make sure it is in on time.<br>- Mag Glass<div class=\"sigBlockM\"><br>Project GRATER Chief of Finances.<br>mglass@agno.com</div><br>",
+			"read": false,
+			"reply": 4
 			}
 	]
 }
