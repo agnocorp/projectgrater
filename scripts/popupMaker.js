@@ -28,7 +28,7 @@ function dismissPopup(){
 	}
 }
 
-function createPopup(subtitle,title,body,type,viewFunction) {
+function createPopup(subtitle,title,body,type,viewFunction,num) {
 	let div = document.createElement("div");
 	div.id = "popup";
 	
@@ -65,7 +65,8 @@ function createPopup(subtitle,title,body,type,viewFunction) {
 	let view = document.createElement("button");
 	view.id = "view";
 	view.textContent = "View";
-	view.onclick = viewFunction;
+	view.addEventListener("click", viewEmail);
+	view.emailNum = num;
 	buttons.append(view);
 	
 	let dismiss = document.createElement("button");
@@ -79,8 +80,22 @@ function createPopup(subtitle,title,body,type,viewFunction) {
 	document.body.append(div);
 }
 
-function viewEmail(){
+async function loadEmailPopup(num){
+	const requestURL = "json/emails.json";
+	
+	const request = new Request(requestURL);
+	
+	const response = await fetch(request);
+	const emailJson = await response.json();
+	emails = await emailJson.emails;
+	email = emails[num];
+		
+	createPopup("New Message from " + email.authoremail,email.subject,email.body,"Email",viewEmail,num);
+}
+
+function viewEmail(evt){
 	console.log("Email or something");
+	window.location.assign("/email.html?e=" + evt.currentTarget.emailNum);
 	localStorage.setItem("hBWwY","true");
 }
 
@@ -94,17 +109,7 @@ if (storageAvailable("localStorage")){
 	let storage = window.localStorage;
 	emailState = storage.getItem("hBWwY");
 	if (!(emailState == "true")){
-		
-		const requestURL = "json/emails.json";
-	
-		const request = new Request(requestURL);
-	
-		const response = await fetch(request);
-		const emailJson = await response.json();
-		emails = await emailJson.emails;
-		email = emails[0];
-		
-		createPopup("New Message From " + email.author,email.subject,email.body,"Email",viewEmail);
+		loadEmailPopup(0);
 	}
 } else {
 	alert("Your browser does not support localStorage! This is probably because it's too old or an unusual browser. This website needs localStorage to function, so try switching to a more modern browser!");

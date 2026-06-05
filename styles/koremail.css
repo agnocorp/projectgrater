@@ -116,6 +116,7 @@ section {
 .menu {
 	width: 10%;
 	background: inherit;
+	overflow: scroll;
 }
 
 .menu > * {
@@ -278,6 +279,39 @@ section {
 	text-indent: 0.5em;
 	margin: 0;
 	}
+	
+.emailViewer .attachment{
+	width: 9em;
+	height: 9em;
+	margin: 1em;
+	padding: 0.5em;
+	background-color: var(--bg-actual-darkest);
+	border: 3px dashed var(--bg-middle);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.emailViewer .attachment .file {
+	font-size: 60pt;
+}
+
+.emailViewer .attachment p {
+	font-size: 10pt;
+	color: var(--text-darker);
+	margin: 0.5em 0;
+	text-align: center;
+}
+
+.emailViewer .attachment p span{
+	font-size: inherit;
+	font-variation-settings:
+	'FILL' 0,
+	'wght' 100,
+	'GRAD' 0,
+	'opsz' 20
+}
 
 .emailViewer .body {
 	margin: 1em 1.2em;

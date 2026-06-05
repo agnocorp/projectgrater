@@ -48,7 +48,12 @@ function viewEmail() {
 		this.classList.add("read");
 	}
 	
-	history.pushState(null, "", "?e="+this.id);
+	if (urlParams.get('e')){
+		history.pushState(null, "", "?e="+this.id);
+	}else{
+		history.replaceState(null, "", "?e="+this.id);
+	}
+	
 	
 	oldViewing = document.getElementsByClassName("viewing")[0];
 	if (oldViewing){
@@ -96,10 +101,17 @@ function viewEmail() {
 		timestampP.textContent = new Intl.DateTimeFormat("en-us", options).format(new Date(openedEmail.date));
 		headingDiv.append(timestampP);
 	emailViewer.append(headingDiv);
+
 	
 	let subjectH2 = document.createElement("h2");
 		subjectH2.textContent = openedEmail.subject;
 	emailViewer.append(subjectH2);
+	
+	if (openedEmail.preceding){
+		precedingDiv = document.createElement("div");
+		precedingDiv.innerHTML = openedEmail.preceding;
+		emailViewer.append(precedingDiv);
+	}
 	
 	let bodyDiv = document.createElement("div");
 		let parsedBody = openedEmail.body.match(/(.*?)<br>/gm);
