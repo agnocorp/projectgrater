@@ -222,10 +222,33 @@ section {
 .emailViewer {
 	width: 69%;
 	overflow: scroll;
-	
 }
 
-.emailViewer > div {
+.emailViewer .placeholder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: var(--text-darker);
+}
+
+.emailViewer .placeholder img {
+	margin: 0 0 1.25em;
+	opacity: 0.8;
+}
+
+.emailViewer .placeholder h3 {
+	margin: 0.4em 0;
+	font-style: italic;
+	font-size: 15pt;
+}
+
+.emailViewer .placeholder p {
+	margin: 0.25em 0;
+}
+
+.emailViewer > .emailViewBG {
 	background-color: var(--bg-darkest);
 	height: 100%;
 }

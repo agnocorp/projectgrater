@@ -63,6 +63,7 @@ function viewEmail() {
 	let emailViewerOuter = document.getElementsByClassName("emailViewer")[0];
 	emailViewerOuter.innerHTML = "";
 	let emailViewer = document.createElement("div");
+		emailViewer.classList.add("emailViewBG");
 	let headingDiv = document.createElement("div");
 	headingDiv.classList.add("heading");
 	
