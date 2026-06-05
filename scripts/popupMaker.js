@@ -56,7 +56,7 @@ function createPopup(subtitle,title,body,type,viewFunction) {
 	div.append(flex)
 	
 	let para = document.createElement("p");
-	para.textContent = body;
+	para.innerHTML = body;
 	div.append(para);
 	
 	let buttons = document.createElement("div");
@@ -94,7 +94,17 @@ if (storageAvailable("localStorage")){
 	let storage = window.localStorage;
 	emailState = storage.getItem("hBWwY");
 	if (!(emailState == "true")){
-		createPopup("test","Subject","s hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys  hi guys hi guys hi guys hi guys hi guys hi guys hi guys  hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys hi guys ","Email",viewEmail);
+		
+		const requestURL = "json/emails.json";
+	
+		const request = new Request(requestURL);
+	
+		const response = await fetch(request);
+		const emailJson = await response.json();
+		emails = await emailJson.emails;
+		email = emails[0];
+		
+		createPopup("New Message From " + email.author,email.subject,email.body,"Email",viewEmail);
 	}
 } else {
 	alert("Your browser does not support localStorage! This is probably because it's too old or an unusual browser. This website needs localStorage to function, so try switching to a more modern browser!");

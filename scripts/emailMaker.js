@@ -48,14 +48,21 @@ function viewEmail() {
 		this.classList.add("read");
 	}
 	
-	history.replaceState(null, "", "?e="+this.id);
+	history.pushState(null, "", "?e="+this.id);
+	
+	oldViewing = document.getElementsByClassName("viewing")[0];
+	if (oldViewing){
+		oldViewing.classList.remove("viewing");
+	} 
+	this.classList.add("viewing");
 	
 	
 	//history.replaceState(null, "", )
 	
 	openedEmail = emails[Number(this.id)];
-	let emailViewer = document.getElementsByClassName("emailViewer")[0];
-	emailViewer.innerHTML = "";
+	let emailViewerOuter = document.getElementsByClassName("emailViewer")[0];
+	emailViewerOuter.innerHTML = "";
+	let emailViewer = document.createElement("div");
 	let headingDiv = document.createElement("div");
 	headingDiv.classList.add("heading");
 	
@@ -102,6 +109,8 @@ function viewEmail() {
 		bodyDiv.innerHTML = finalBody;
 		bodyDiv.classList.add("body");
 	emailViewer.append(bodyDiv);
+	
+	emailViewerOuter.append(emailViewer);
 	
 }
 

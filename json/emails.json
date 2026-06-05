@@ -39,6 +39,16 @@
 			"subject": "This Wednesday: Lightning Wand on Crystals in Steelmaking",
 			"body": "Lightning Wand, an Agnocorp material sciences researcher known for pioneering the use of class-E crystals in cryogenic oxygen distillation, will be giving a presentation on the various potential applications of crystal technology in the steelmaking process this Wednesday. The presentation will be held in Building 11, Room 103 at 4:30 PM. Some refreshments will be provided! See below for more information: <br><img src=\"https://files.catbox.moe/hpkgka.png\" style=\"width:600px\"><br>Radar<br>Agnocorp Events Coordinator<br>radar@agno.com<br>",
 			"read": false
+			},
+			{
+			"author": "Radar",
+			"authoremail": "radar@agno.com",
+			"recipients": ["Agnocorp Employees"],
+			"recipemails": [],
+			"date": "3000-10-03T13:21:08.000Z",
+			"subject": "im still working on this one",
+			"body": "sorry chat<br>",
+			"read": false
 			}
 	]
 }
