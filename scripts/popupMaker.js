@@ -95,7 +95,7 @@ async function loadEmailPopup(num){
 
 function viewEmail(evt){
 	console.log("Email or something");
-	window.location.assign("/email.html?e=" + evt.currentTarget.emailNum);
+	window.location.assign("./email.html?e=" + evt.currentTarget.emailNum);
 	localStorage.setItem("hBWwY","true");
 }
 
