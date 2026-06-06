@@ -193,6 +193,13 @@ section {
 	overflow: hidden;
 }
 
+.emailList div h4 span{
+	color: var(--red) !important;
+	font-size: 16pt !important;
+	vertical-align: bottom;
+	margin-bottom: 1px;
+}
+
 .emailList div p {
 	overflow: hidden;
 	display: -webkit-box;
@@ -299,7 +306,17 @@ section {
 	padding: 0.7em 0 0.5em;
 	text-indent: 0.5em;
 	margin: 0;
+	display: flex;
 	}
+	
+.emailViewer h2 div{
+	color: var(--red) !important;
+	font-size: 22pt !important;
+	vertical-align: bottom;
+	margin-bottom: 2px;
+	margin-left: auto;
+	margin-right: 1em;
+}
 	
 .emailViewer .attachment{
 	width: 9em;

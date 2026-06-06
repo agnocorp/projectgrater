@@ -4,7 +4,7 @@ var emails = {}
 const url = window.location.search;
 const urlParams = new URLSearchParams(url);
 
-function addEmail(author, recipients, timestamp, subject, body, read, num){
+function addEmail(author, recipients, timestamp, subject, body, read, num, priority){
 
 	
 	let emailDiv = document.createElement("div");
@@ -20,7 +20,15 @@ function addEmail(author, recipients, timestamp, subject, body, read, num){
 		authorH3.textContent = author;
 		emailDiv.append(authorH3);
 	let subjectH4 = document.createElement("h4");
-		subjectH4.textContent = subject;
+		if (priority){
+			prioritySpan = document.createElement("span");
+			prioritySpan.classList.add("material-symbols-outlined");
+			prioritySpan.textContent = ("priority_high");
+			prioritySpan.title = "Important!";
+			subjectH4.append(prioritySpan);
+		}
+		subjectH4.append(subject);
+		
 		headingDiv.append(subjectH4);
 	let timestampP = document.createElement("p");
 		const options = {
@@ -128,6 +136,13 @@ function viewEmail() {
 	
 	let subjectH2 = document.createElement("h2");
 		subjectH2.textContent = openedEmail.subject;
+		if (openedEmail.priority){
+			priorityDiv = document.createElement("div");
+			priorityDiv.classList.add("material-symbols-outlined");
+			priorityDiv.textContent = ("priority_high");
+			priorityDiv.title = "Important!";
+			subjectH2.append(priorityDiv);
+		}
 	emailViewer.append(subjectH2);
 	
 	if (openedEmail.preceding){
@@ -174,7 +189,7 @@ async function populateList(){
 	
 	for (const email of emails) {
 		if (!email.reply){
-			addEmail(email.author, email.recipients, email.date, email.subject, email.body, email.read, emailNum);
+			addEmail(email.author, email.recipients, email.date, email.subject, email.body, email.read, emailNum, email.priority);
 			document.getElementById(emailNum.toString()).addEventListener("click", viewEmail);
 		}
 		emailNum = emailNum + 1;

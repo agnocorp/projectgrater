@@ -7,9 +7,10 @@
 			"recipemails": ["mglass@agno.com"],
 			"date": "3000-10-17T16:09:34.000Z",
 			"subject": "Q3 Budget Error",
-			"preceding": "<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/spreadsheets/d/1xQcZ2aiLXrL_iB3REYykSPrdxidRWMkNCB_IhgA4-Zs/edit?gid=1398001727#gid=1398001727\"><div class=\"attachment\"><div class=\"material-symbols-outlined file\">file_present</div><p>GRATER 3006 Annual Budget Report <span class=\"material-symbols-outlined\">open_in_new</span></p></div></a>",
+			"preceding": "<a class=\"attachment\" target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://docs.google.com/spreadsheets/d/1xQcZ2aiLXrL_iB3REYykSPrdxidRWMkNCB_IhgA4-Zs/edit?gid=1398001727#gid=1398001727\"><div class=\"material-symbols-outlined file\">file_present</div><p>GRATER 3006 Annual Budget Report <span class=\"material-symbols-outlined\">open_in_new</span></p></a>",
 			"body": "Glass,<br>Your Q3 budget report appears to have errors. The total of the Amount column under Allocated Funds (cell B11) does not match the total of the Budget column under Quarterly Expenses (cell B21). Please fix this ASAP as we are already late on submitting this.<br>Arrow<div class=\"sigBlockA\"><br>Project GRATER Chief Engineer<br>arrow@agno.com</div><br>",
-			"read": false
+			"read": false,
+			"priority": true
 			},
 			{
 			"author": "Clockwork",
@@ -50,7 +51,7 @@
 			"date": "3000-09-28T08:03:32.000Z",
 			"subject": "Q3 Budget Reminder",
 			"body": "Glass,<br>Reminder that the Q3 budget report is due this Friday. Please ensure you have it turned in on time.<br>Arrow<div class=\"sigBlockA\"><br>Project GRATER Chief Engineer<br>arrow@agno.com</div><br>",
-			"read": false
+			"read": true
 			},
 			{
 			"author": "You",
@@ -60,7 +61,7 @@
 			"date": "3000-09-28T14:56:02.000Z",
 			"subject": "Re: Q3 Budget Reminder",
 			"body": "Thank you...will make sure it is in on time.<br>- Mag Glass<div class=\"sigBlockM\"><br>Project GRATER Chief of Finances.<br>mglass@agno.com</div><br>",
-			"read": false,
+			"read": true,
 			"reply": 4
 			}
 	]
