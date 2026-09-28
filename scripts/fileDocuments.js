@@ -83,6 +83,9 @@ if (path){
 				pdfDiv.insertBefore(pdfControls, page1);
 			}else{
 				console.log("no page1");
+				let noDocP = document.createElement("p");
+				noDocP.textContent = "No document found!";
+				pdfDiv.insertBefore(pdfControls, noDocP);
 			}
 			
 		})
