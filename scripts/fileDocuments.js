@@ -69,6 +69,10 @@ if (path){
 	}else{
 		path = decodeURI(path);
 		let url = "files/"+path;
+		
+		if (path == "arrow%2FDocuments%2FGRATERlog0305037.pdf"){
+			
+		}
 
 		pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
 			pdfDoc = pdfDoc_;
@@ -83,9 +87,6 @@ if (path){
 				pdfDiv.insertBefore(pdfControls, page1);
 			}else{
 				console.log("no page1");
-				let noDocP = document.createElement("p");
-				noDocP.textContent = "No document found!";
-				pdfDiv.insertBefore(pdfControls, noDocP);
 			}
 			
 		})

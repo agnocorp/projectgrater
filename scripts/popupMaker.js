@@ -1,5 +1,10 @@
+
+
 let icons = new Map();
-icons.set("Email", "mail")
+icons.set("Email", "mail");
+icons.set("Notif", "error");
+
+let page = document.currentScript.dataset.page;
 
 function storageAvailable(type) { //stole this from MDN docs!
   let storage;
@@ -64,9 +69,20 @@ function createPopup(subtitle,title,body,type,viewFunction,num) {
 	
 	let view = document.createElement("button");
 	view.id = "view";
-	view.textContent = "View";
-	view.addEventListener("click", viewEmail);
-	view.emailNum = num;
+	switch(viewFunction){
+		case "viewEmail":
+			view.textContent = "View";
+			view.addEventListener("click", viewEmail);
+			view.emailNum = num;
+			break;
+		case "understand":
+			view.textContent = "I Understand";
+			view.addEventListener("click", dismissPopup);
+			console.log("understand case");
+			break;
+		default: console.log("u fucked somethign up with this popups viewfunction yo");
+	}
+	
 	buttons.append(view);
 	
 	let dismiss = document.createElement("button");
@@ -90,8 +106,9 @@ async function loadEmailPopup(num){
 	emails = await emailJson.emails;
 	email = emails[num];
 		
-	createPopup("New Message from " + email.authoremail,email.subject,email.body,"Email",viewEmail,num);
+	createPopup("New Message from " + email.authoremail,email.subject,email.body,"Email","viewEmail",num);
 }
+
 
 function viewEmail(evt){
 	console.log("Email or something");
@@ -107,9 +124,22 @@ function sleep(ms) {
 
 if (storageAvailable("localStorage")){
 	let storage = window.localStorage;
-	emailState = storage.getItem("hBWwY");
-	if (!(emailState == "true")){
-		loadEmailPopup(0);
+	switch(page){
+		case "dashboard":
+			emailState = storage.getItem("hBWwY");
+			if (!(emailState == "true")){
+				loadEmailPopup(0);
+			}
+			break;
+		case "file":
+			emailState = storage.getItem("TcINM");
+			switch(emailState){
+				case null:
+					localStorage.setItem("TcINM",1);
+					createPopup("notification","Do you understand?","CLUE HERE","Notif","understand");
+			}
+		default:
+			console.log("popup missing page attribute");
 	}
 } else {
 	alert("Your browser does not support localStorage! This is probably because it's too old or an unusual browser. This website needs localStorage to function, so try switching to a more modern browser!");
