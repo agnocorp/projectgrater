@@ -4,6 +4,7 @@ var emails = {}
 const url = window.location.search;
 const urlParams = new URLSearchParams(url);
 
+
 function addEmail(author, recipients, timestamp, subject, body, read, num, priority){
 
 	
