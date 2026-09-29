@@ -136,7 +136,20 @@ if (storageAvailable("localStorage")){
 			switch(emailState){
 				case null:
 					localStorage.setItem("TcINM",1);
-					createPopup("notification","Do you understand?","CLUE HERE","Notif","understand");
+					createPopup("notification","Do you understand?","Do you understand?","Notif","understand");
+					break;
+				case 1:
+					localStorage.setItem("TcINM",2);
+					createPopup("notification","...Do you understand?","Did you need to see a second time?","Notif","understand");
+					break;
+				case 2:
+					localStorage.setItem("TcINM",3);
+					createPopup("notification","...Is there confusion?","The words are simple enough.","Notif","understand");
+					break;
+				case 3:
+					localStorage.setItem("TcINM",4);
+					createPopup("notification","Surely this is unnecessary.","The words are simple enough.","Notif","understand");
+					break;
 			}
 		default:
 			console.log("popup missing page attribute");
