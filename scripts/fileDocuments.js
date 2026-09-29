@@ -75,7 +75,7 @@ if (path){
 			if (pdfDoc){
 				pageCount = pdfDoc.numPages;
 				
-				pdfViewer.innerHTML = "";
+				pdfDiv.innerHTML = "";
 				
 				for (let page = 1; page <= pageCount; page++){
 				drawPage(page);
