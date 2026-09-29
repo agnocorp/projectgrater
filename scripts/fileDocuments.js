@@ -1,7 +1,6 @@
 
 const pdfDiv = document.getElementById("pdfDiv");
-const pdfControls = document.getElementById("pdfControls");
-const pageNumInput = document.getElementById("pageNumInput");
+const pdfViewer = document.getElementById("pdfViewer");
 
 const { pdfjsLib } = globalThis;
   
@@ -35,6 +34,7 @@ function drawPage(num) {
 
 function goToPage() {
 	event.preventDefault();
+	const pageNumInput = document.getElementById("pageNumInput");
 	
 	var num = null;
 	
@@ -57,8 +57,6 @@ function goToPage() {
 	console.log(pageCount + "controls");
 }
 
-pdfControls.addEventListener("submit", goToPage);
-
 //pdfControls.onsubmit = "goToPage(1);";
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -77,22 +75,35 @@ if (path){
 			if (pdfDoc){
 				pageCount = pdfDoc.numPages;
 				
+				pdfViewer.innerHTML = "";
+				
 				for (let page = 1; page <= pageCount; page++){
 				drawPage(page);
 				}
 				
 				const page1 = document.getElementById("page1");
 				if (page1 != null){
+					let pdfControls = document.createElement("form");
+						pdfControls.id = "pdfControls";
+						pdfControls.onsubmit = "return false;";
+					let pdfCInput = document.createElement("input");
+						pdfCInput.type = "text";
+						pdfCInput.id = "pageNumInput";
+						pdfCInput.placeholder = 1;
+						pdfControls.append(pdfCInput);
+					let pdfCGo = document.createElement("button");
+						pdfCGo.type = "submit";
+						pdfCGo.textContent = "Go To Page";
+						pdfControls.append(pdfCGo);
+						
 					pdfDiv.insertBefore(pdfControls, page1);
+					pdfControls.addEventListener("submit", goToPage);
 				}else{
 					console.log("no page1");
 				}
 			}else{
-				
+				console.log("no pdf");
 			}
-			
-			
-			
 		})
 	}
 }else{
