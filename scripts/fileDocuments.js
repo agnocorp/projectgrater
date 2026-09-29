@@ -70,24 +70,28 @@ if (path){
 		path = decodeURI(path);
 		let url = "files/"+path;
 		
-		if (path == "arrow%2FDocuments%2FGRATERlog0305037.pdf"){
-			
-		}
 
 		pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
 			pdfDoc = pdfDoc_;
-			pageCount = pdfDoc.numPages;
 			
-			for (let page = 1; page <= pageCount; page++){
+			if (pdfDoc){
+				pageCount = pdfDoc.numPages;
+				
+				for (let page = 1; page <= pageCount; page++){
 				drawPage(page);
+				}
+				
+				const page1 = document.getElementById("page1");
+				if (page1 != null){
+					pdfDiv.insertBefore(pdfControls, page1);
+				}else{
+					console.log("no page1");
+				}
+			}else{
+				
 			}
 			
-			const page1 = document.getElementById("page1");
-			if (page1 != null){
-				pdfDiv.insertBefore(pdfControls, page1);
-			}else{
-				console.log("no page1");
-			}
+			
 			
 		})
 	}
