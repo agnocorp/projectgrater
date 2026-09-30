@@ -8,6 +8,34 @@
 	padding: 2em 3em;
 }
 
-section #pdfViewer {
+#pdfViewer {
+	padding-bottom: 0;
 	padding-top: 0;
+	margin: 2.5em 0;
 }
+
+#pdfDiv p {
+	height: 700px;
+}
+
+.fileInfo {
+	height: auto;
+	width: 100%;
+	padding-bottom: 0.5em;
+	padding-top: 1em;
+	padding-left: 1em;
+	overflow: hidden;
+	
+	color:var(--text-darker);
+	
+	background-color: var(--bg-middle);
+	border-bottom: 2px solid var(--text-darker);
+}
+
+.fileInfo .material-symbols-outlined {
+	font-size: 14pt;
+	vertical-align: bottom;
+	margin-bottom: 1px;
+	font-variation-settings: 'FILL' 1;
+}
+

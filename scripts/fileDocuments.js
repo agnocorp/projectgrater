@@ -107,5 +107,5 @@ if (path){
 		})
 	}
 }else{
-	alert("No file path provided!");
+	console.log("No file path provided!");
 }

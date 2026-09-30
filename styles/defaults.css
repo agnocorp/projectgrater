@@ -19,6 +19,10 @@ a:link, a:visited{
 	color: inherit;
 }
 
+.material-symbols-outlined {
+	overflow: hidden;
+}
+
 html {
 
 }
@@ -220,7 +224,7 @@ footer {
 	font-size: 1.5em;
 }
 
-.material-symbols-outlined{
+.sideBarSymbols{
 	font-size: 2.5em !important;
 	line-height: 75px !important;
 }
